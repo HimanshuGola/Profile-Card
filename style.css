@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
+
+:root{
+    --clr-primary-700: hsl(229, 23%, 23%);
+    --clr-primary-600: hsl(227, 10%, 46%);
+    --clr-primary-400: hsl(185, 75%, 39%);
+
+    --clr-neutral: hsl(0, 0%, 59%);
+
+    --fw-regular: 400;
+    --fw-bolder: 700;
+
+    --ff-main: 'Kumbh Sans', sans-serif;
+
+    font-size: 18px;
+}
+
+
+/* Reset */
+
+*, *::before, *::after {
+box-sizing: border-box;
+}
+* {
+margin: 0;
+}
+html, body {
+min-height: 100vh;
+}
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+input, button, textarea, select {
+font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+#root, #__next {
+isolation: isolate;
+}
+
+/* Utility Classes */
+
+.flex-group{
+    --flex-direction: column;
+    --flex-ai-center: center;
+    --flex-jc-center: center;
+    --gap: 0;
+    display: flex;
+    flex-direction: var(--flex-direction);
+    justify-content: var(--flex-jc-center);
+    align-items: var(--flex-ai-center);
+    gap: var(--gap);
+
+}
+
+/* Main CSS */
+
+body{
+    position: relative;
+    background-color: var(--clr-primary-400);
+    overflow: hidden;
+    font-family: var(--ff-main);
+    
+}
+
+body::before{
+    position: absolute;
+    content: "";
+    background-image: url("images/bg-pattern-top.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-width: 400px;
+    width: 75vw;
+    max-width: 978px;
+    aspect-ratio: 1;
+    top: -40vw;
+    left: -20vw;
+    z-index: -1;
+}
+body::after{
+    position: absolute;
+    content: "";
+    background-image: url("images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-width: 400px;
+    width: 75vw;
+    max-width: 978px;
+    aspect-ratio: 1;
+    bottom: -110vh;
+    right: -15vw;
+    z-index: -2;
+}
+
+@media (max-width: 700px){
+    body::before{
+        width: 100vw;
+        top: -50vh;
+        left: -40vw;
+    }
+
+    body::after{
+        width: 100vw;
+        top: 55vh;
+        left: 50vw;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 999px){
+    body::before{
+        width: 100vw;
+        top: -80vh;
+        left: -45vw;
+    }
+
+    body::after{
+        width: 100vw;
+        top: 55vh;
+        left: 50vw;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px){
+    body::before{
+        width: 100vw;
+        top: -90vh;
+        left: -40vw;
+    }
+    body::after{
+        width: 90vw;
+        top: 55vh;
+        left: 40vw;
+    }
+}
+
+.card{
+    background-color: white;
+    width: 90%;
+    max-width: 350px;
+    margin: 1rem auto;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0px 20px 20px 5px rgba(0,0,0,10%);
+}
+
+.card__content{
+    --gap: 1rem;
+    width: 100%;
+}
+
+.card__profile-img{
+    border: 5px solid white;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-title{
+    --flex-direction: row;
+    --gap: 0.5rem;
+    margin-top: -3rem;
+}
+
+.profile-name{
+    font-size: 1rem;
+    font-weight: var(--fw-bolder);
+    color: var(--clr-primary-700);
+    letter-spacing: 0.25px;
+}
+
+.profile-age{
+    font-size: 1rem;
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-600);
+}
+
+.profile-place{
+    font-size: 0.75rem;
+    font-weight: var(--fw-regular);
+    letter-spacing: 0.5px;
+    color: var(--clr-primary-600);
+    margin-top: -0.75rem;
+    margin-bottom: 0.4rem;
+}
+
+.profile-stats{
+    --flex-direction: row;
+    --gap: 2.5rem;
+    width: 100%;
+    border: none;
+    border-top: 1px solid hsl(0, 0%, 59%, 25%);
+    padding-block: 1.2rem;
+}
+
+.stat-container{
+    --gap: 0.1rem;
+}
+
+.stat-data{
+    font-size: 1rem;
+    font-weight: var(--fw-bolder);
+    color: var(--clr-primary-700);
+}
+
+.stat-title{
+    font-size: 0.6rem;
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-600);
+    letter-spacing: 1px;
+}
